@@ -1,0 +1,30 @@
+//25 present in last digit of it square that is 625
+
+import java.util.*;
+
+class Main{
+    
+    String AutoMorphic(int n)
+    {
+        int sq=n*n;
+        while(n>0)
+        {
+            if(n%10!=sq%10)
+            return "AutoMorphic";
+            else{
+                sq/=10;
+                n/=10;
+            }
+        }
+        return "Not AutoMorphic";
+    }
+    
+    public static void main(String []args)
+    {
+        Scanner sc=new Scanner(System.in);
+        Main obj=new Main();
+        int n=sc.nextInt();
+        System.out.println(obj.AutoMorphic(n));
+    }
+    
+}
