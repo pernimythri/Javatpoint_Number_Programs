@@ -1,0 +1,88 @@
+/*A number is called a tech number if the given number has an even number of digits and the number can be divided exactly into two parts from the middle.
+After equally dividing the number, sum up the numbers and find the square of the sum. 
+If we get the number itself as square, the given number is a tech number, else, not a tech number. 
+For example, 3025 is a tech number. */
+
+
+
+import java.util.*;
+class Main{
+    
+     String techNumber(int n)
+     {
+         int count=0;
+         int temp=n;
+         while(n>0)
+         {
+             count+=1;
+             n/=10;
+         }
+         if(count%2==0)
+         {
+             int firsthalf=temp/(int)(Math.pow(10,count/2));
+             int lasthalf=temp%(int)(Math.pow(10,count/2));
+             int sum=firsthalf+lasthalf;
+             int square=sum*sum;
+             if(temp==square)
+             return "Tech Number";
+             else
+             return "Not Tech Number";
+             
+         }
+         else
+         return "Not Tech Number";
+     }
+    
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        Main obj=new Main();
+        int n=sc.nextInt();
+        System.out.println(obj.techNumber(n));
+    }
+}
+
+-----------------------------------------------------------------
+
+/*A number is called a tech number if the given number has an even number of digits and the number can be divided exactly into two parts from the middle.
+After equally dividing the number, sum up the numbers and find the square of the sum. 
+If we get the number itself as square, the given number is a tech number, else, not a tech number. 
+For example, 3025 is a tech number. */
+
+import java.util.*;
+class Main{
+    
+     String techNumber(int n)
+     {
+         
+          int count=0;
+         int temp=n;
+         while(temp>0)
+         {
+             count+=1;
+             temp/=10;
+         }
+         if(count%2==0)
+         {
+         int firsthalf=n/100;
+         int lasthalf=n%100;
+         
+         int sum=firsthalf+lasthalf;
+         if(n==(sum*sum))
+         return "Tech Number";
+         else
+         return "Not TechNumber";
+         
+     }
+         else
+         return "Not TechNumber";
+     }
+    
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        Main obj=new Main();
+        int n=sc.nextInt();
+        System.out.println(obj.techNumber(n));
+    }
+}
