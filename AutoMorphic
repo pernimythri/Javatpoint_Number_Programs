@@ -28,3 +28,33 @@ class Main{
     }
     
 }
+-------------------------------------------------------------
+
+import java.util.*;
+class Main{
+    String Antimorphic(int n)
+    {
+        int square=n*n;
+        int temp=n;
+        int count=0;
+        while(temp>0)
+        {
+            count+=1;
+            temp/=10;
+        }
+        int lastdigit=(int)(square%(Math.pow(10,count)));
+        if(lastdigit==n)
+        return "Antimorphic";
+        else
+        return "Not Antimorphic";
+    }
+    
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        Main obj=new Main();
+        int n=sc.nextInt();
+        System.out.println(obj.Antimorphic(n));
+        
+    }
+}
