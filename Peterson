@@ -1,0 +1,34 @@
+//A number is said to be Peterson if the sum of factorials of each digit is equal to the sum of the number itself.
+
+import java.util.*;
+class Main{
+    String Peterson(int n)
+    {
+        int temp=n;
+        int factsum=0,sum=0;
+        while(temp>0)
+        {
+            factsum+=fact(temp%10);
+            temp/=10;
+        }
+        if(n==factsum)
+        return "Peterson";
+        else
+        return "Not Peterson";
+    }
+    int fact(int digit)
+    {
+        if(digit==1 )
+        return 1;
+        else
+        return digit*fact(digit-1);
+    }
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        Main obj=new Main();
+        int n=sc.nextInt();
+        System.out.println(obj.Peterson(n));
+        
+    }
+}
