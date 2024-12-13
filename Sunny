@@ -1,0 +1,26 @@
+//A number is said to be Peterson if the sum of factorials of each digit is equal to the sum of the number itself.
+
+import java.util.*;
+class Main{
+    
+    boolean Sunny(int n)
+    {
+        if((Math.sqrt(n+1)%1)==0)
+        return true;
+        else
+        return false;
+    }
+    
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        Main obj=new Main();
+        int start=sc.nextInt();
+        int end=sc.nextInt();
+        for(int i=start;i<=end;i++)
+        {
+          if(obj.Sunny(i))
+          System.out.print(i+" ");
+        }
+    }
+}
